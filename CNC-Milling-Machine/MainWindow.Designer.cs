@@ -51,6 +51,9 @@ namespace CNC_Milling_Machine {
             this.dataGridView_main = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label_help = new System.Windows.Forms.Label();
+            this.dataGridView_second = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_xmax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ymax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_zmax)).BeginInit();
@@ -61,6 +64,7 @@ namespace CNC_Milling_Machine {
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_z)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_main)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_second)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -213,7 +217,7 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_step.Minimum = new decimal(new int[] {
-            1,
+            100,
             0,
             0,
             0});
@@ -221,7 +225,7 @@ namespace CNC_Milling_Machine {
             this.numericUpDown_step.Size = new System.Drawing.Size(150, 27);
             this.numericUpDown_step.TabIndex = 10;
             this.numericUpDown_step.Value = new decimal(new int[] {
-            1,
+            100,
             0,
             0,
             0});
@@ -352,7 +356,7 @@ namespace CNC_Milling_Machine {
             this.dataGridView_main.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_main.ColumnHeadersVisible = false;
-            this.dataGridView_main.Location = new System.Drawing.Point(333, 26);
+            this.dataGridView_main.Location = new System.Drawing.Point(333, 46);
             this.dataGridView_main.MultiSelect = false;
             this.dataGridView_main.Name = "dataGridView_main";
             this.dataGridView_main.ReadOnly = true;
@@ -360,15 +364,15 @@ namespace CNC_Milling_Machine {
             this.dataGridView_main.RowHeadersWidth = 51;
             this.dataGridView_main.RowTemplate.Height = 29;
             this.dataGridView_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_main.Size = new System.Drawing.Size(595, 466);
+            this.dataGridView_main.Size = new System.Drawing.Size(595, 446);
             this.dataGridView_main.TabIndex = 18;
             this.dataGridView_main.SelectionChanged += new System.EventHandler(this.dataGridView_main_SelectionChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(834, 498);
+            this.button1.Location = new System.Drawing.Point(178, 577);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 65);
+            this.button1.Size = new System.Drawing.Size(136, 65);
             this.button1.TabIndex = 19;
             this.button1.Text = "Update data (stub)";
             this.button1.UseVisualStyleBackColor = true;
@@ -384,11 +388,53 @@ namespace CNC_Milling_Machine {
             this.label_help.TabIndex = 20;
             this.label_help.Text = "Нажмите \"F\", чтобы отдать честь.";
             // 
+            // dataGridView_second
+            // 
+            this.dataGridView_second.AllowUserToAddRows = false;
+            this.dataGridView_second.AllowUserToDeleteRows = false;
+            this.dataGridView_second.AllowUserToResizeColumns = false;
+            this.dataGridView_second.AllowUserToResizeRows = false;
+            this.dataGridView_second.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_second.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_second.ColumnHeadersVisible = false;
+            this.dataGridView_second.Location = new System.Drawing.Point(333, 518);
+            this.dataGridView_second.MultiSelect = false;
+            this.dataGridView_second.Name = "dataGridView_second";
+            this.dataGridView_second.ReadOnly = true;
+            this.dataGridView_second.RowHeadersVisible = false;
+            this.dataGridView_second.RowHeadersWidth = 51;
+            this.dataGridView_second.RowTemplate.Height = 29;
+            this.dataGridView_second.Size = new System.Drawing.Size(596, 188);
+            this.dataGridView_second.TabIndex = 21;
+            this.dataGridView_second.SelectionChanged += new System.EventHandler(this.dataGridView_main_SelectionChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(333, 23);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 20);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Вид сверху";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(331, 495);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 20);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Вид спереди";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 567);
+            this.ClientSize = new System.Drawing.Size(940, 720);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.dataGridView_second);
             this.Controls.Add(this.label_help);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView_main);
@@ -406,6 +452,7 @@ namespace CNC_Milling_Machine {
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Станок";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainWindow_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_xmax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ymax)).EndInit();
@@ -419,6 +466,7 @@ namespace CNC_Milling_Machine {
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_z)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_main)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_second)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,6 +501,9 @@ namespace CNC_Milling_Machine {
         private System.Windows.Forms.DataGridView dataGridView_main;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label_help;
+        private System.Windows.Forms.DataGridView dataGridView_second;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 

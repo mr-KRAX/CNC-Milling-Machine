@@ -98,18 +98,38 @@ namespace CNC_Milling_Machine {
 
         public void UpdateData_stub()
         {
-            var array = new int[10,10];
+            var size_x = 10;
+            var size_y = 20;
+            var size_z = 5;
 
-            dataGridView_main.RowCount = 10;
-            dataGridView_main.ColumnCount = 10;
-            for(var i = 0; i < 10; ++i)
-                for(var j = 0; j < 10; ++j)
-                    dataGridView_main.Rows[i].Cells[j].Value = array[i, j];
+            // todo remove and add real data
 
-            dataGridView_main.AutoSizeColumnsMode = 
-                DataGridViewAutoSizeColumnsMode.AllCells;
 
+            // i - row, j - column
+            var array_main = new int[size_x,size_y];
+            for(var i = 0; i < size_x; i++)
+            for (var j = 0; j < size_y; j++)
+                array_main[i, j] = size_z;
+
+            dataGridView_main.RowCount = size_x;
+            dataGridView_main.ColumnCount = size_y;
+            for(var i = 0; i < size_x; ++i)
+                for(var j = 0; j < size_y; ++j)
+                    dataGridView_main.Rows[i].Cells[j].Value = array_main[i, j];
+
+            var array_second = new int[size_z, size_y];
+            for(var i = 0; i < size_z; i++)
+            for (var j = 0; j < size_y; j++)
+                array_second[i, j] = size_x;
+
+            dataGridView_second.RowCount = size_z;
+            dataGridView_second.ColumnCount = size_y;
+            for(var i = 0; i < size_z; ++i)
+            for(var j = 0; j < size_y; ++j)
+                dataGridView_second.Rows[i].Cells[j].Value = array_second[i, j];
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -133,6 +153,19 @@ namespace CNC_Milling_Machine {
                 ((DataGridView)sender).SelectedCells[0].Selected = false;
             }
             catch { }
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            dataGridView_main.AutoSizeColumnsMode = 
+                DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView_second.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
