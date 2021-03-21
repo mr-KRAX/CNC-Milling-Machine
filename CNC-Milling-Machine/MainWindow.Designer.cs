@@ -89,7 +89,7 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_xmax.ValueChanged += new System.EventHandler(this.numericUpDown_xmax_ValueChanged);
-            this.numericUpDown_xmax.Leave += new System.EventHandler(this.numericUpDown_xmax_Leave);
+            this.numericUpDown_xmax.Leave += new System.EventHandler(this.numericUpDown_Focus_Leave);
             // 
             // label2
             // 
@@ -126,7 +126,7 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_ymax.ValueChanged += new System.EventHandler(this.numericUpDown_ymax_ValueChanged);
-            this.numericUpDown_ymax.Leave += new System.EventHandler(this.numericUpDown_xmax_Leave);
+            this.numericUpDown_ymax.Leave += new System.EventHandler(this.numericUpDown_Focus_Leave);
             // 
             // label3
             // 
@@ -163,7 +163,7 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_zmax.ValueChanged += new System.EventHandler(this.numericUpDown_zmax_ValueChanged);
-            this.numericUpDown_zmax.Leave += new System.EventHandler(this.numericUpDown_xmax_Leave);
+            this.numericUpDown_zmax.Leave += new System.EventHandler(this.numericUpDown_Focus_Leave);
             // 
             // label5
             // 
@@ -226,7 +226,7 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_step.ValueChanged += new System.EventHandler(this.numericUpDown_step_ValueChanged);
-            this.numericUpDown_step.Leave += new System.EventHandler(this.numericUpDown_xmax_Leave);
+            this.numericUpDown_step.Leave += new System.EventHandler(this.numericUpDown_Focus_Leave);
             // 
             // label8
             // 
@@ -347,15 +347,22 @@ namespace CNC_Milling_Machine {
             // 
             this.dataGridView_main.AllowUserToAddRows = false;
             this.dataGridView_main.AllowUserToDeleteRows = false;
+            this.dataGridView_main.AllowUserToResizeColumns = false;
+            this.dataGridView_main.AllowUserToResizeRows = false;
             this.dataGridView_main.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_main.ColumnHeadersVisible = false;
             this.dataGridView_main.Location = new System.Drawing.Point(333, 26);
+            this.dataGridView_main.MultiSelect = false;
             this.dataGridView_main.Name = "dataGridView_main";
             this.dataGridView_main.ReadOnly = true;
+            this.dataGridView_main.RowHeadersVisible = false;
             this.dataGridView_main.RowHeadersWidth = 51;
             this.dataGridView_main.RowTemplate.Height = 29;
+            this.dataGridView_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_main.Size = new System.Drawing.Size(595, 466);
             this.dataGridView_main.TabIndex = 18;
+            this.dataGridView_main.SelectionChanged += new System.EventHandler(this.dataGridView_main_SelectionChanged);
             // 
             // button1
             // 

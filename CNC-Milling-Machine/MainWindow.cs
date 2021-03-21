@@ -113,13 +113,26 @@ namespace CNC_Milling_Machine {
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // todo delete this button and method
             UpdateData_stub();
         }
 
-        private void numericUpDown_xmax_Leave(object sender, EventArgs e)
+        private void numericUpDown_Focus_Leave(object sender, EventArgs e)
         {
+            // universal method, just little improvement to
+            // default UI behavior
             var senderObj = (NumericUpDown) sender;
             senderObj.Text = senderObj.Value.ToString(CultureInfo.CurrentCulture);
+        }
+
+        private void dataGridView_main_SelectionChanged(object sender, EventArgs e)
+        {
+            // forbid selection
+            try
+            {
+                ((DataGridView)sender).SelectedCells[0].Selected = false;
+            }
+            catch { }
         }
     }
 }
