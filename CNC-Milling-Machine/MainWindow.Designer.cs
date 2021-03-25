@@ -24,6 +24,7 @@ namespace CNC_Milling_Machine {
     ///  the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown_xmax = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@ namespace CNC_Milling_Machine {
             this.dataGridView_second = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_xmax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ymax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_zmax)).BeginInit();
@@ -79,6 +81,11 @@ namespace CNC_Milling_Machine {
             // numericUpDown_xmax
             // 
             this.numericUpDown_xmax.Location = new System.Drawing.Point(59, 35);
+            this.numericUpDown_xmax.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numericUpDown_xmax.Minimum = new decimal(new int[] {
             1,
             0,
@@ -116,6 +123,11 @@ namespace CNC_Milling_Machine {
             // numericUpDown_ymax
             // 
             this.numericUpDown_ymax.Location = new System.Drawing.Point(59, 68);
+            this.numericUpDown_ymax.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.numericUpDown_ymax.Minimum = new decimal(new int[] {
             1,
             0,
@@ -153,6 +165,11 @@ namespace CNC_Milling_Machine {
             // numericUpDown_zmax
             // 
             this.numericUpDown_zmax.Location = new System.Drawing.Point(59, 101);
+            this.numericUpDown_zmax.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericUpDown_zmax.Minimum = new decimal(new int[] {
             1,
             0,
@@ -293,7 +310,9 @@ namespace CNC_Milling_Machine {
             // 
             // trackBar_z
             // 
+            this.trackBar_z.Enabled = false;
             this.trackBar_z.Location = new System.Drawing.Point(59, 162);
+            this.trackBar_z.Maximum = 5;
             this.trackBar_z.Name = "trackBar_z";
             this.trackBar_z.Size = new System.Drawing.Size(237, 56);
             this.trackBar_z.TabIndex = 14;
@@ -302,6 +321,7 @@ namespace CNC_Milling_Machine {
             // trackBar_y
             // 
             this.trackBar_y.Location = new System.Drawing.Point(59, 100);
+            this.trackBar_y.Maximum = 20;
             this.trackBar_y.Name = "trackBar_y";
             this.trackBar_y.Size = new System.Drawing.Size(237, 56);
             this.trackBar_y.TabIndex = 13;
@@ -330,6 +350,7 @@ namespace CNC_Milling_Machine {
             // 
             // button_stop
             // 
+            this.button_stop.Enabled = false;
             this.button_stop.Location = new System.Drawing.Point(178, 463);
             this.button_stop.Name = "button_stop";
             this.button_stop.Size = new System.Drawing.Size(136, 29);
@@ -365,7 +386,7 @@ namespace CNC_Milling_Machine {
             this.dataGridView_main.RowHeadersWidth = 51;
             this.dataGridView_main.RowTemplate.Height = 29;
             this.dataGridView_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_main.Size = new System.Drawing.Size(595, 446);
+            this.dataGridView_main.Size = new System.Drawing.Size(595, 411);
             this.dataGridView_main.TabIndex = 18;
             this.dataGridView_main.SelectionChanged += new System.EventHandler(this.dataGridView_main_SelectionChanged);
             // 
@@ -398,14 +419,14 @@ namespace CNC_Milling_Machine {
             this.dataGridView_second.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_second.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_second.ColumnHeadersVisible = false;
-            this.dataGridView_second.Location = new System.Drawing.Point(333, 518);
+            this.dataGridView_second.Location = new System.Drawing.Point(333, 484);
             this.dataGridView_second.MultiSelect = false;
             this.dataGridView_second.Name = "dataGridView_second";
             this.dataGridView_second.ReadOnly = true;
             this.dataGridView_second.RowHeadersVisible = false;
             this.dataGridView_second.RowHeadersWidth = 51;
             this.dataGridView_second.RowTemplate.Height = 29;
-            this.dataGridView_second.Size = new System.Drawing.Size(596, 188);
+            this.dataGridView_second.Size = new System.Drawing.Size(596, 224);
             this.dataGridView_second.TabIndex = 21;
             this.dataGridView_second.SelectionChanged += new System.EventHandler(this.dataGridView_main_SelectionChanged);
             // 
@@ -421,12 +442,17 @@ namespace CNC_Milling_Machine {
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(331, 495);
+            this.label13.Location = new System.Drawing.Point(331, 461);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 20);
             this.label13.TabIndex = 23;
             this.label13.Text = "Вид спереди";
             this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 500;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // MainWindow
             // 
@@ -505,6 +531,7 @@ namespace CNC_Milling_Machine {
         private System.Windows.Forms.DataGridView dataGridView_second;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Timer timer;
     }
 }
 

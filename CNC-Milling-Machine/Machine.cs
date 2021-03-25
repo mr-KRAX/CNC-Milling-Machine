@@ -10,7 +10,7 @@ namespace CNC_Milling_Machine
             Constants.BlankSizeY];
         private int pos_x = 0, pos_y = 0, pos_z = Constants.BlankSizeZ;
 
-        Machine()
+        public Machine()
         {
             for(var i = 0; i < 10; i++)
             for (var j = 0; j < 20; j++)
@@ -31,9 +31,9 @@ namespace CNC_Milling_Machine
 
         public void StepXPos()
         {
-            if (pos_x >= Constants.BlankSizeX)
+            if (pos_x >= Constants.BlankSizeX - 1)
             {
-                pos_x = Constants.BlankSizeX;
+                pos_x = Constants.BlankSizeX - 1;
                 return;
             }
 
@@ -53,9 +53,9 @@ namespace CNC_Milling_Machine
 
         public void StepYPos()
         {
-            if (pos_y >= Constants.BlankSizeY)
+            if (pos_y >= Constants.BlankSizeY - 1)
             {
-                pos_y = Constants.BlankSizeY;
+                pos_y = Constants.BlankSizeY - 1;
                 return;
             }
 
@@ -75,7 +75,7 @@ namespace CNC_Milling_Machine
 
         public void SetZPosition(int pos)
         {
-            if(pos < 0 || pos > Constants.BlankSizeZ)
+            if(pos < 0 || pos >= Constants.BlankSizeZ)
                 return;
 
             pos_z = pos;
@@ -83,8 +83,8 @@ namespace CNC_Milling_Machine
 
         public void Reset()
         {
-            for(var i = 0; i < 10; i++)
-            for (var j = 0; j < 20; j++)
+            for(var i = 0; i < Constants.BlankSizeX; i++)
+            for(var j = 0; j < Constants.BlankSizeY; j++)
                 blank[i, j] = Constants.BlankSizeZ;
 
             pos_x = 0;
