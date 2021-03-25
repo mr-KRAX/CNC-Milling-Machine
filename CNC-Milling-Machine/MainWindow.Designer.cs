@@ -50,7 +50,7 @@ namespace CNC_Milling_Machine {
             this.button_stop = new System.Windows.Forms.Button();
             this.button_step = new System.Windows.Forms.Button();
             this.dataGridView_main = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_reset = new System.Windows.Forms.Button();
             this.label_help = new System.Windows.Forms.Label();
             this.dataGridView_second = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,15 +72,16 @@ namespace CNC_Milling_Machine {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 37);
+            this.label1.Location = new System.Drawing.Point(6, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(33, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Xmax";
+            this.label1.Text = "Xsize";
             // 
             // numericUpDown_xmax
             // 
-            this.numericUpDown_xmax.Location = new System.Drawing.Point(59, 35);
+            this.numericUpDown_xmax.Location = new System.Drawing.Point(52, 26);
+            this.numericUpDown_xmax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown_xmax.Maximum = new decimal(new int[] {
             10,
             0,
@@ -92,7 +93,7 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_xmax.Name = "numericUpDown_xmax";
-            this.numericUpDown_xmax.Size = new System.Drawing.Size(150, 27);
+            this.numericUpDown_xmax.Size = new System.Drawing.Size(131, 23);
             this.numericUpDown_xmax.TabIndex = 1;
             this.numericUpDown_xmax.Value = new decimal(new int[] {
             1,
@@ -105,24 +106,25 @@ namespace CNC_Milling_Machine {
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(215, 37);
+            this.label2.Location = new System.Drawing.Point(188, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 20);
+            this.label2.Size = new System.Drawing.Size(22, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "см";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 70);
+            this.label4.Location = new System.Drawing.Point(6, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 20);
+            this.label4.Size = new System.Drawing.Size(32, 15);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Ymax";
+            this.label4.Text = "Ysize";
             // 
             // numericUpDown_ymax
             // 
-            this.numericUpDown_ymax.Location = new System.Drawing.Point(59, 68);
+            this.numericUpDown_ymax.Location = new System.Drawing.Point(52, 51);
+            this.numericUpDown_ymax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown_ymax.Maximum = new decimal(new int[] {
             20,
             0,
@@ -134,7 +136,7 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_ymax.Name = "numericUpDown_ymax";
-            this.numericUpDown_ymax.Size = new System.Drawing.Size(150, 27);
+            this.numericUpDown_ymax.Size = new System.Drawing.Size(131, 23);
             this.numericUpDown_ymax.TabIndex = 4;
             this.numericUpDown_ymax.Value = new decimal(new int[] {
             1,
@@ -147,36 +149,32 @@ namespace CNC_Milling_Machine {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(215, 70);
+            this.label3.Location = new System.Drawing.Point(188, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 20);
+            this.label3.Size = new System.Drawing.Size(22, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "см";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 103);
+            this.label6.Location = new System.Drawing.Point(6, 77);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 20);
+            this.label6.Size = new System.Drawing.Size(37, 15);
             this.label6.TabIndex = 6;
             this.label6.Text = "Zmax";
             // 
             // numericUpDown_zmax
             // 
-            this.numericUpDown_zmax.Location = new System.Drawing.Point(59, 101);
+            this.numericUpDown_zmax.Location = new System.Drawing.Point(52, 76);
+            this.numericUpDown_zmax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown_zmax.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.numericUpDown_zmax.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_zmax.Name = "numericUpDown_zmax";
-            this.numericUpDown_zmax.Size = new System.Drawing.Size(150, 27);
+            this.numericUpDown_zmax.Size = new System.Drawing.Size(131, 23);
             this.numericUpDown_zmax.TabIndex = 7;
             this.numericUpDown_zmax.Value = new decimal(new int[] {
             4,
@@ -189,9 +187,9 @@ namespace CNC_Milling_Machine {
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(215, 103);
+            this.label5.Location = new System.Drawing.Point(188, 77);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 20);
+            this.label5.Size = new System.Drawing.Size(22, 15);
             this.label5.TabIndex = 8;
             this.label5.Text = "см";
             // 
@@ -209,9 +207,11 @@ namespace CNC_Milling_Machine {
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.numericUpDown_xmax);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 9);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 177);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(264, 133);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление работой";
@@ -219,15 +219,16 @@ namespace CNC_Milling_Machine {
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(215, 136);
+            this.label7.Location = new System.Drawing.Point(188, 102);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 20);
+            this.label7.Size = new System.Drawing.Size(22, 15);
             this.label7.TabIndex = 11;
             this.label7.Text = "мс";
             // 
             // numericUpDown_step
             // 
-            this.numericUpDown_step.Location = new System.Drawing.Point(59, 134);
+            this.numericUpDown_step.Location = new System.Drawing.Point(52, 100);
+            this.numericUpDown_step.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown_step.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -239,10 +240,10 @@ namespace CNC_Milling_Machine {
             0,
             0});
             this.numericUpDown_step.Name = "numericUpDown_step";
-            this.numericUpDown_step.Size = new System.Drawing.Size(150, 27);
+            this.numericUpDown_step.Size = new System.Drawing.Size(131, 23);
             this.numericUpDown_step.TabIndex = 10;
             this.numericUpDown_step.Value = new decimal(new int[] {
-            500,
+            100,
             0,
             0,
             0});
@@ -252,18 +253,19 @@ namespace CNC_Milling_Machine {
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 136);
+            this.label8.Location = new System.Drawing.Point(6, 102);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 20);
+            this.label8.Size = new System.Drawing.Size(29, 15);
             this.label8.TabIndex = 9;
             this.label8.Text = "Шаг";
             // 
             // trackBar_x
             // 
-            this.trackBar_x.Location = new System.Drawing.Point(59, 38);
+            this.trackBar_x.Location = new System.Drawing.Point(52, 28);
+            this.trackBar_x.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBar_x.Maximum = 9;
             this.trackBar_x.Name = "trackBar_x";
-            this.trackBar_x.Size = new System.Drawing.Size(237, 56);
+            this.trackBar_x.Size = new System.Drawing.Size(207, 45);
             this.trackBar_x.TabIndex = 12;
             this.trackBar_x.Scroll += new System.EventHandler(this.trackBar_x_Scroll);
             // 
@@ -275,9 +277,11 @@ namespace CNC_Milling_Machine {
             this.groupBox2.Controls.Add(this.trackBar_z);
             this.groupBox2.Controls.Add(this.trackBar_y);
             this.groupBox2.Controls.Add(this.trackBar_x);
-            this.groupBox2.Location = new System.Drawing.Point(12, 196);
+            this.groupBox2.Location = new System.Drawing.Point(10, 147);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 225);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(264, 169);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Положение резца";
@@ -285,54 +289,57 @@ namespace CNC_Milling_Machine {
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 162);
+            this.label11.Location = new System.Drawing.Point(6, 122);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 20);
+            this.label11.Size = new System.Drawing.Size(26, 15);
             this.label11.TabIndex = 17;
             this.label11.Text = "Z: 0";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 100);
+            this.label10.Location = new System.Drawing.Point(7, 75);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 20);
+            this.label10.Size = new System.Drawing.Size(26, 15);
             this.label10.TabIndex = 16;
             this.label10.Text = "Y: 0";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 38);
+            this.label9.Location = new System.Drawing.Point(6, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 20);
+            this.label9.Size = new System.Drawing.Size(26, 15);
             this.label9.TabIndex = 15;
             this.label9.Text = "X: 0";
             // 
             // trackBar_z
             // 
             this.trackBar_z.Enabled = false;
-            this.trackBar_z.Location = new System.Drawing.Point(59, 162);
+            this.trackBar_z.Location = new System.Drawing.Point(52, 122);
+            this.trackBar_z.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBar_z.Maximum = 5;
             this.trackBar_z.Name = "trackBar_z";
-            this.trackBar_z.Size = new System.Drawing.Size(237, 56);
+            this.trackBar_z.Size = new System.Drawing.Size(207, 45);
             this.trackBar_z.TabIndex = 14;
             this.trackBar_z.Scroll += new System.EventHandler(this.trackBar_z_Scroll);
             // 
             // trackBar_y
             // 
-            this.trackBar_y.Location = new System.Drawing.Point(59, 100);
+            this.trackBar_y.Location = new System.Drawing.Point(52, 75);
+            this.trackBar_y.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBar_y.Maximum = 19;
             this.trackBar_y.Name = "trackBar_y";
-            this.trackBar_y.Size = new System.Drawing.Size(237, 56);
+            this.trackBar_y.Size = new System.Drawing.Size(207, 45);
             this.trackBar_y.TabIndex = 13;
             this.trackBar_y.Scroll += new System.EventHandler(this.trackBar_y_Scroll);
             // 
             // button_play
             // 
-            this.button_play.Location = new System.Drawing.Point(13, 428);
+            this.button_play.Location = new System.Drawing.Point(11, 321);
+            this.button_play.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_play.Name = "button_play";
-            this.button_play.Size = new System.Drawing.Size(138, 29);
+            this.button_play.Size = new System.Drawing.Size(121, 22);
             this.button_play.TabIndex = 14;
             this.button_play.Text = "Пуск";
             this.button_play.UseVisualStyleBackColor = true;
@@ -341,9 +348,10 @@ namespace CNC_Milling_Machine {
             // button_pause
             // 
             this.button_pause.Enabled = false;
-            this.button_pause.Location = new System.Drawing.Point(178, 428);
+            this.button_pause.Location = new System.Drawing.Point(156, 321);
+            this.button_pause.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_pause.Name = "button_pause";
-            this.button_pause.Size = new System.Drawing.Size(136, 29);
+            this.button_pause.Size = new System.Drawing.Size(119, 22);
             this.button_pause.TabIndex = 15;
             this.button_pause.Text = "Пауза";
             this.button_pause.UseVisualStyleBackColor = true;
@@ -352,9 +360,10 @@ namespace CNC_Milling_Machine {
             // button_stop
             // 
             this.button_stop.Enabled = false;
-            this.button_stop.Location = new System.Drawing.Point(178, 463);
+            this.button_stop.Location = new System.Drawing.Point(156, 347);
+            this.button_stop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_stop.Name = "button_stop";
-            this.button_stop.Size = new System.Drawing.Size(136, 29);
+            this.button_stop.Size = new System.Drawing.Size(119, 22);
             this.button_stop.TabIndex = 17;
             this.button_stop.Text = "Стоп";
             this.button_stop.UseVisualStyleBackColor = true;
@@ -362,9 +371,10 @@ namespace CNC_Milling_Machine {
             // 
             // button_step
             // 
-            this.button_step.Location = new System.Drawing.Point(13, 463);
+            this.button_step.Location = new System.Drawing.Point(11, 347);
+            this.button_step.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_step.Name = "button_step";
-            this.button_step.Size = new System.Drawing.Size(138, 29);
+            this.button_step.Size = new System.Drawing.Size(121, 22);
             this.button_step.TabIndex = 16;
             this.button_step.Text = "Шаг";
             this.button_step.UseVisualStyleBackColor = true;
@@ -379,7 +389,8 @@ namespace CNC_Milling_Machine {
             this.dataGridView_main.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_main.ColumnHeadersVisible = false;
-            this.dataGridView_main.Location = new System.Drawing.Point(333, 46);
+            this.dataGridView_main.Location = new System.Drawing.Point(291, 34);
+            this.dataGridView_main.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_main.MultiSelect = false;
             this.dataGridView_main.Name = "dataGridView_main";
             this.dataGridView_main.ReadOnly = true;
@@ -387,27 +398,28 @@ namespace CNC_Milling_Machine {
             this.dataGridView_main.RowHeadersWidth = 51;
             this.dataGridView_main.RowTemplate.Height = 29;
             this.dataGridView_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_main.Size = new System.Drawing.Size(595, 411);
+            this.dataGridView_main.Size = new System.Drawing.Size(521, 308);
             this.dataGridView_main.TabIndex = 18;
             this.dataGridView_main.SelectionChanged += new System.EventHandler(this.dataGridView_main_SelectionChanged);
             // 
-            // button1
+            // button_reset
             // 
-            this.button1.Location = new System.Drawing.Point(178, 577);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 65);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Update data (stub)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_reset.Location = new System.Drawing.Point(156, 433);
+            this.button_reset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(119, 49);
+            this.button_reset.TabIndex = 19;
+            this.button_reset.Text = "Сбросить изменения";
+            this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.Click += new System.EventHandler(this.button1_Click);
             // 
             // label_help
             // 
             this.label_help.AutoSize = true;
             this.label_help.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_help.Location = new System.Drawing.Point(12, 518);
+            this.label_help.Location = new System.Drawing.Point(10, 388);
             this.label_help.Name = "label_help";
-            this.label_help.Size = new System.Drawing.Size(313, 28);
+            this.label_help.Size = new System.Drawing.Size(250, 21);
             this.label_help.TabIndex = 20;
             this.label_help.Text = "Нажмите \"F\", чтобы отдать честь.";
             // 
@@ -420,51 +432,51 @@ namespace CNC_Milling_Machine {
             this.dataGridView_second.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_second.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_second.ColumnHeadersVisible = false;
-            this.dataGridView_second.Location = new System.Drawing.Point(333, 484);
+            this.dataGridView_second.Location = new System.Drawing.Point(291, 363);
+            this.dataGridView_second.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_second.MultiSelect = false;
             this.dataGridView_second.Name = "dataGridView_second";
             this.dataGridView_second.ReadOnly = true;
             this.dataGridView_second.RowHeadersVisible = false;
             this.dataGridView_second.RowHeadersWidth = 51;
             this.dataGridView_second.RowTemplate.Height = 29;
-            this.dataGridView_second.Size = new System.Drawing.Size(596, 224);
+            this.dataGridView_second.Size = new System.Drawing.Size(522, 168);
             this.dataGridView_second.TabIndex = 21;
             this.dataGridView_second.SelectionChanged += new System.EventHandler(this.dataGridView_main_SelectionChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(333, 23);
+            this.label12.Location = new System.Drawing.Point(291, 17);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 20);
+            this.label12.Size = new System.Drawing.Size(67, 15);
             this.label12.TabIndex = 22;
             this.label12.Text = "Вид сверху";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(331, 461);
+            this.label13.Location = new System.Drawing.Point(290, 346);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 20);
+            this.label13.Size = new System.Drawing.Size(75, 15);
             this.label13.TabIndex = 23;
             this.label13.Text = "Вид спереди";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // timer
             // 
-            this.timer.Interval = 500;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 720);
+            this.ClientSize = new System.Drawing.Size(822, 540);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dataGridView_second);
             this.Controls.Add(this.label_help);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_reset);
             this.Controls.Add(this.dataGridView_main);
             this.Controls.Add(this.button_stop);
             this.Controls.Add(this.button_step);
@@ -474,6 +486,7 @@ namespace CNC_Milling_Machine {
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainWindow";
@@ -527,7 +540,7 @@ namespace CNC_Milling_Machine {
         private System.Windows.Forms.Button button_stop;
         private System.Windows.Forms.Button button_step;
         private System.Windows.Forms.DataGridView dataGridView_main;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_reset;
         private System.Windows.Forms.Label label_help;
         private System.Windows.Forms.DataGridView dataGridView_second;
         private System.Windows.Forms.Label label12;

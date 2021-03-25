@@ -31,9 +31,9 @@ namespace CNC_Milling_Machine
 
         public void StepXPos()
         {
-            if (pos_x >= Constants.BlankSizeX - 1)
+            if (pos_x >= Constants.BlankSizeX)
             {
-                pos_x = Constants.BlankSizeX - 1;
+                pos_x = Constants.BlankSizeX;
                 return;
             }
 
@@ -46,9 +46,9 @@ namespace CNC_Milling_Machine
             pos_x++;
         }
 
-        public void ResetXPosition()
+        public void ResetXPosition(int pos = 0)
         {
-            pos_x = 0;
+            pos_x = pos;
         }
 
         public void StepYPos()
@@ -75,7 +75,7 @@ namespace CNC_Milling_Machine
 
         public void SetZPosition(int pos)
         {
-            if(pos < 0 || pos >= Constants.BlankSizeZ)
+            if(pos < 0 || pos > Constants.BlankSizeZ)
                 return;
 
             pos_z = pos;
