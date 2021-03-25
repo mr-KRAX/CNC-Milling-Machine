@@ -146,11 +146,11 @@ namespace CNC_Milling_Machine {
 
 
 
-        public void UpdateData_stub()
+        public void InitMatrix()
         {
-            var size_x = 10;
-            var size_y = 20;
-            var size_z = 5;
+            var size_x = Constants.BlankSizeX;
+            var size_y = Constants.BlankSizeY;
+            var size_z = Constants.BlankSizeZ;
 
             // todo remove and add real data
 
@@ -175,18 +175,19 @@ namespace CNC_Milling_Machine {
             dataGridView_second.RowCount = size_z;
             dataGridView_second.ColumnCount = size_y;
             for(var i = 0; i < size_z; ++i)
-            for(var j = 0; j < size_y; ++j)
-                dataGridView_second.Rows[i].Cells[j].Value = 
-                    array_second[i, j] > 0 
-                    ? array_second[i, j].ToString()
-                    : " ";
+            for (var j = 0; j < size_y; ++j)
+                dataGridView_second.Rows[i].Cells[j].Value =
+                    array_second[i, j];
         }
 
         void UpdateData()
         {
             for(var i = 0; i < Constants.BlankSizeX; ++i)
             for(var j = 0; j < Constants.BlankSizeY; ++j)
-                dataGridView_main.Rows[i].Cells[j].Value = machine.GetBlank()[i, j];
+                dataGridView_main.Rows[i].Cells[j].Value = 
+                    machine.GetBlank()[i, j] > 0
+                        ? machine.GetBlank()[i, j].ToString()
+                        : " ";
 
             for(var i = 0; i < Constants.BlankSizeZ; i++)
             for (var j = 0; j < Constants.BlankSizeY; j++)
@@ -216,7 +217,7 @@ namespace CNC_Milling_Machine {
         private void button1_Click(object sender, EventArgs e)
         {
             // todo delete this button and method
-            UpdateData_stub();
+            InitMatrix();
         }
 
         private void numericUpDown_Focus_Leave(object sender, EventArgs e)
@@ -239,6 +240,9 @@ namespace CNC_Milling_Machine {
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            InitMatrix();
+            trackBar_x.Maximum = Constants.BlankSizeX - 1;
+            trackBar_y.Maximum = Constants.BlankSizeY - 1;
             dataGridView_main.AutoSizeColumnsMode = 
                 DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_second.AutoSizeColumnsMode =

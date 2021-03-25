@@ -261,6 +261,7 @@ namespace CNC_Milling_Machine {
             // trackBar_x
             // 
             this.trackBar_x.Location = new System.Drawing.Point(59, 38);
+            this.trackBar_x.Maximum = 9;
             this.trackBar_x.Name = "trackBar_x";
             this.trackBar_x.Size = new System.Drawing.Size(237, 56);
             this.trackBar_x.TabIndex = 12;
@@ -321,7 +322,7 @@ namespace CNC_Milling_Machine {
             // trackBar_y
             // 
             this.trackBar_y.Location = new System.Drawing.Point(59, 100);
-            this.trackBar_y.Maximum = 20;
+            this.trackBar_y.Maximum = 19;
             this.trackBar_y.Name = "trackBar_y";
             this.trackBar_y.Size = new System.Drawing.Size(237, 56);
             this.trackBar_y.TabIndex = 13;
