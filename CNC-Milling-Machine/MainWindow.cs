@@ -71,7 +71,7 @@ namespace CNC_Milling_Machine {
             // todo
         }
 
-        private void button_start_Click(object sender, EventArgs e)
+        private void button_step_Click(object sender, EventArgs e)
         {
             // todo
         }

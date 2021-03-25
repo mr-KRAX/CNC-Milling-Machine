@@ -47,7 +47,7 @@ namespace CNC_Milling_Machine {
             this.button_play = new System.Windows.Forms.Button();
             this.button_pause = new System.Windows.Forms.Button();
             this.button_stop = new System.Windows.Forms.Button();
-            this.button_start = new System.Windows.Forms.Button();
+            this.button_step = new System.Windows.Forms.Button();
             this.dataGridView_main = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label_help = new System.Windows.Forms.Label();
@@ -162,7 +162,7 @@ namespace CNC_Milling_Machine {
             this.numericUpDown_zmax.Size = new System.Drawing.Size(150, 27);
             this.numericUpDown_zmax.TabIndex = 7;
             this.numericUpDown_zmax.Value = new decimal(new int[] {
-            1,
+            4,
             0,
             0,
             0});
@@ -225,7 +225,7 @@ namespace CNC_Milling_Machine {
             this.numericUpDown_step.Size = new System.Drawing.Size(150, 27);
             this.numericUpDown_step.TabIndex = 10;
             this.numericUpDown_step.Value = new decimal(new int[] {
-            100,
+            500,
             0,
             0,
             0});
@@ -319,6 +319,7 @@ namespace CNC_Milling_Machine {
             // 
             // button_pause
             // 
+            this.button_pause.Enabled = false;
             this.button_pause.Location = new System.Drawing.Point(178, 428);
             this.button_pause.Name = "button_pause";
             this.button_pause.Size = new System.Drawing.Size(136, 29);
@@ -337,15 +338,15 @@ namespace CNC_Milling_Machine {
             this.button_stop.UseVisualStyleBackColor = true;
             this.button_stop.Click += new System.EventHandler(this.button_stop_Click);
             // 
-            // button_start
+            // button_step
             // 
-            this.button_start.Location = new System.Drawing.Point(13, 463);
-            this.button_start.Name = "button_start";
-            this.button_start.Size = new System.Drawing.Size(138, 29);
-            this.button_start.TabIndex = 16;
-            this.button_start.Text = "Старт";
-            this.button_start.UseVisualStyleBackColor = true;
-            this.button_start.Click += new System.EventHandler(this.button_start_Click);
+            this.button_step.Location = new System.Drawing.Point(13, 463);
+            this.button_step.Name = "button_step";
+            this.button_step.Size = new System.Drawing.Size(138, 29);
+            this.button_step.TabIndex = 16;
+            this.button_step.Text = "Шаг";
+            this.button_step.UseVisualStyleBackColor = true;
+            this.button_step.Click += new System.EventHandler(this.button_step_Click);
             // 
             // dataGridView_main
             // 
@@ -439,7 +440,7 @@ namespace CNC_Milling_Machine {
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView_main);
             this.Controls.Add(this.button_stop);
-            this.Controls.Add(this.button_start);
+            this.Controls.Add(this.button_step);
             this.Controls.Add(this.button_pause);
             this.Controls.Add(this.button_play);
             this.Controls.Add(this.groupBox2);
@@ -497,7 +498,7 @@ namespace CNC_Milling_Machine {
         private System.Windows.Forms.Button button_play;
         private System.Windows.Forms.Button button_pause;
         private System.Windows.Forms.Button button_stop;
-        private System.Windows.Forms.Button button_start;
+        private System.Windows.Forms.Button button_step;
         private System.Windows.Forms.DataGridView dataGridView_main;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label_help;
