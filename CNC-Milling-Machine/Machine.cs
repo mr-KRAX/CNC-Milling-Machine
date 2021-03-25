@@ -22,7 +22,7 @@ namespace CNC_Milling_Machine
             return blank;
         }
 
-        public void GetPos(out int xPos, out int yPos, out int zPos)
+        public void GetPosition(out int xPos, out int yPos, out int zPos)
         {
             xPos = pos_x;
             yPos = pos_y;
@@ -31,12 +31,24 @@ namespace CNC_Milling_Machine
 
         public void StepXPos()
         {
-            // todo
+            if (pos_x >= Constants.BlankSizeX)
+            {
+                pos_x = Constants.BlankSizeX;
+                return;
+            }
+
+            blank[pos_x, pos_y] = Math.Min(pos_z, 
+                blank[pos_x, pos_y]);
+
+            if (blank[pos_x, pos_y] < 0)
+                blank[pos_x, pos_y] = 0;
+
+            pos_x++;
         }
 
-        public void StepXNeg()
+        public void ResetXPosition()
         {
-            // todo
+            pos_x = 0;
         }
 
         public void StepYPos()
@@ -61,27 +73,46 @@ namespace CNC_Milling_Machine
             pos_y--;
         }
 
-        public void StepZPos()
+        public void SetZPosition(int pos)
         {
-            if (pos_z >= Constants.BlankSizeZ)
-            {
-                pos_z = Constants.BlankSizeZ;
+            if(pos < 0 || pos > Constants.BlankSizeZ)
                 return;
-            }
 
-            pos_z++;
+            pos_z = pos;
         }
 
-        public void StepZNeg()
+        public void Reset()
         {
-            if (pos_z <= 0)
-            {
-                pos_z = 0;
-                return;
-            }
+            for(var i = 0; i < 10; i++)
+            for (var j = 0; j < 20; j++)
+                blank[i, j] = Constants.BlankSizeZ;
 
-            pos_z--;
+            pos_x = 0;
+            pos_y = 0;
+            pos_z = Constants.BlankSizeZ;
         }
+
+        //public void StepZPos()
+        //{
+        //    if (pos_z >= Constants.BlankSizeZ)
+        //    {
+        //        pos_z = Constants.BlankSizeZ;
+        //        return;
+        //    }
+
+        //    pos_z++;
+        //}
+
+        //public void StepZNeg()
+        //{
+        //    if (pos_z <= 0)
+        //    {
+        //        pos_z = 0;
+        //        return;
+        //    }
+
+        //    pos_z--;
+        //}
     }
 
     static class Constants
